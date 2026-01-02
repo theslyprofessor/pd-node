@@ -1,0 +1,15 @@
+#N canvas 0 0 800 600 12;
+#X text 50 50 pd-node Test Patch;
+#X text 50 80 Phase 1: Object Creation Test;
+#X text 50 120 Try creating these objects:;
+#X obj 100 180 node;
+#X text 200 180 <- Basic object (no script);
+#X obj 100 240 node examples/hello.js;
+#X text 300 240 <- With JavaScript file;
+#X obj 100 300 node examples/hello.ts;
+#X text 300 300 <- With TypeScript file;
+#X text 50 380 Expected behavior (Phase 1):;
+#X text 70 410 ✅ Objects create without errors;
+#X text 70 440 ✅ Help file opens (right-click -> Help);
+#X text 70 470 ⚠️ Scripts don't execute yet (Phase 2 needed);
+#X text 50 520 Check Plugdata console for runtime detection messages;
