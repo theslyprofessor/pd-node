@@ -34,3 +34,13 @@ test-output/
 # Test binaries
 test_detector
 test_detector.cpp
+
+# Reorganization artifacts
+test-patch.pd  # Moved to patches/
+REORGANIZE_PLAN.md  # Temporary planning doc
+CMakeLists.txt  # Moved to src/
+
+# Xcode build artifacts
+pd.build/
+*.xcodeproj/
+*.xcworkspace/

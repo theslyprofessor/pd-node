@@ -236,7 +236,47 @@ pd.post('Info message');      // Print to PD console
 pd.error('Error message');    // Print error to PD console
 ```
 
-## 🏗️ Project Structure
+## 🏗️ Repository Structure
+
+```
+pd-node/
+├── README.md                  # You are here!
+├── QUICKSTART.md              # Fast start guide
+├── LICENSE
+│
+├── patches/                   # ⭐ DEMO PATCHES - START HERE!
+│   ├── hello-demo.pd         # Basic JavaScript execution
+│   ├── teoria-demo.pd        # npm packages (music theory)
+│   ├── weather-demo.pd       # Live data (async/await)
+│   ├── node-help.pd          # Help file
+│   └── test-patch.pd         # Development test
+│
+├── examples/                  # JavaScript source files
+│   ├── hello.js
+│   ├── chords.js
+│   └── weather-sonify.js
+│
+├── binaries/                  # Compiled externals
+│   └── arm64-macos/
+│       └── node.pd_darwin    # The [node] external
+│
+├── docs/                      # Deep-dive documentation
+│   ├── ARCHITECTURE.md       # System design
+│   ├── PHASE2_COMPLETE.md    # Implementation notes
+│   ├── ROADMAP.md            # Future plans
+│   └── ...
+│
+├── src/                       # C++ source code
+│   ├── node.cpp              # Main external
+│   ├── wrapper.js            # JavaScript injection
+│   └── CMakeLists.txt
+│
+└── scripts/                   # Installation scripts
+    ├── install.sh
+    └── install-plugdata.sh
+```
+
+### Your Patch Structure
 
 ```
 your-pd-patch/
@@ -277,14 +317,32 @@ pd-node automatically detects and uses the best available runtime:
 [node --version]  →  Prints detected runtime info to console
 ```
 
-## 📖 Examples
+## 📖 Examples & Patches
 
-See `examples/` directory:
+### 🎨 Demo Patches (`patches/`)
 
-- `01-npm-packages/` - Using lodash, ramda, etc.
-- `02-async-fetch/` - Web APIs and async/await
-- `03-websocket-server/` - Real-time communication
-- `04-ai-integration/` - Using AI/ML libraries
+**Start here!** Open these patches in Pure Data to see pd-node in action:
+
+- **`hello-demo.pd`** - Basic JavaScript execution
+  - Send bangs and numbers
+  - See JavaScript console logs
+  - Perfect first test!
+
+- **`teoria-demo.pd`** - Music theory with npm packages
+  - Uses the `teoria` npm package
+  - Generate major chords from note names
+  - Shows real npm package integration
+
+- **`weather-demo.pd`** - Live data sonification
+  - Fetches real weather data via API
+  - async/await in Pure Data!
+  - Maps temperature/humidity to sound parameters
+
+### 📝 JavaScript Examples (`examples/`)
+
+- `hello.js` - Simple message handling
+- `chords.js` - Music theory (teoria.js)
+- `weather-sonify.js` - Async data fetching
 
 ## 🎓 Comparison: Max/MSP Migration
 
