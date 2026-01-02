@@ -1,0 +1,36 @@
+{
+  "name": "pd-api",
+  "version": "0.1.0",
+  "description": "Pure Data API for pd-node external (like max-api for Max/MSP)",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "keywords": [
+    "pure-data",
+    "pd",
+    "audio",
+    "dsp",
+    "music",
+    "pd-node",
+    "javascript",
+    "typescript"
+  ],
+  "author": "Nakul Tiruviluamala <theslyprofessor>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theslyprofessor/pd-node.git",
+    "directory": "pd-api"
+  },
+  "bugs": {
+    "url": "https://github.com/theslyprofessor/pd-node/issues"
+  },
+  "homepage": "https://github.com/theslyprofessor/pd-node#readme",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

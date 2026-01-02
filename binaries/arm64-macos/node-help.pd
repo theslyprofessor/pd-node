@@ -1,0 +1,13 @@
+#N canvas 0 0 800 600 12;
+#X text 20 20 node - Modern JavaScript & TypeScript for Pure Data;
+#X text 20 50 Usage:;
+#X text 40 70 [node script.js] - Load JavaScript file;
+#X text 40 90 [node script.ts] - Load TypeScript file (requires Bun);
+#X text 20 130 Examples:;
+#X obj 40 160 node hello.js;
+#X obj 40 200 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000;
+#X obj 40 240 print output;
+#X connect 5 0 7 0;
+#X connect 6 0 5 0;
+#X text 20 280 See examples/ directory for more;
+#X text 20 310 Documentation: https://github.com/theslyprofessor/pd-node;

@@ -80,7 +80,7 @@ elseif(WIN32)
 endif()
 
 # Strip release builds on macOS
-if(CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang" AND ${CMAKE_BUILD_TYPE} STREQUAL "Release")
+if(CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang" AND CMAKE_BUILD_TYPE STREQUAL "Release")
     add_custom_command(TARGET pd_node_project POST_BUILD 
         COMMAND strip -x $<TARGET_FILE:pd_node_project>
         COMMENT "Stripping debug symbols from pd-node external"
