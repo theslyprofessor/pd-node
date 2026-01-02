@@ -55,15 +55,10 @@ add_compile_definitions(
     PD_NODE_VERSION_PATCH=${PROJECT_VERSION_PATCH}
 )
 
-# Source files
-set(PD_NODE_SOURCES
-    ${PROJECT_SOURCE_DIR}/node/node.cpp
-    ${PROJECT_SOURCE_DIR}/node/runtime_detector.cpp
-    ${PROJECT_SOURCE_DIR}/node/ipc_bridge.cpp
-)
-
 # Create pd-node external
-add_pd_external(pd_node_project node ${PD_NODE_SOURCES})
+add_pd_external(pd_node_project node 
+    "${PROJECT_SOURCE_DIR}/node/node.cpp;${PROJECT_SOURCE_DIR}/node/runtime_detector.cpp;${PROJECT_SOURCE_DIR}/node/ipc_bridge.cpp"
+)
 
 # Copy help files and pd-api to output
 configure_file(node/node-help.pd ${PD_OUTPUT_PATH}/node-help.pd COPYONLY)
