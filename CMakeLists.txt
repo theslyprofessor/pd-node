@@ -60,8 +60,9 @@ add_pd_external(pd_node_project node
     "${PROJECT_SOURCE_DIR}/node/node.cpp;${PROJECT_SOURCE_DIR}/node/runtime_detector.cpp;${PROJECT_SOURCE_DIR}/node/ipc_bridge.cpp"
 )
 
-# Copy help files and pd-api to output
+# Copy help files, pd-api, and wrapper.js to output
 configure_file(node/node-help.pd ${PD_OUTPUT_PATH}/node-help.pd COPYONLY)
+configure_file(node/wrapper.js ${PD_OUTPUT_PATH}/wrapper.js COPYONLY)
 file(COPY ${PROJECT_SOURCE_DIR}/pd-api DESTINATION ${PD_OUTPUT_PATH})
 
 # Platform-specific linking

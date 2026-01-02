@@ -67,13 +67,19 @@ const pd = {
     outlet(outlet, ...values) {
         if (values.length === 0) {
             // Bang
-            _internal.outlet(outlet);
+            _internal.outlet(outlet, 'bang');
         } else if (values.length === 1) {
-            // Single value
-            _internal.outlet(outlet, values[0]);
+            const value = values[0];
+            if (typeof value === 'number') {
+                _internal.outlet(outlet, 'float', value);
+            } else if (typeof value === 'string') {
+                _internal.outlet(outlet, 'symbol', value);
+            } else {
+                _internal.outlet(outlet, 'anything', value);
+            }
         } else {
             // List
-            _internal.outlet(outlet, values);
+            _internal.outlet(outlet, 'list', ...values);
         }
     },
     
@@ -126,13 +132,16 @@ const pd = {
             throw new TypeError('Callback must be a function');
         }
         
-        if (!handlers.has(message)) {
-            handlers.set(message, []);
+        // Register with wrapper.js internal API
+        if (_internal.register) {
+            _internal.register(message, callback);
+        } else {
+            // Fallback for testing outside PD
+            if (!handlers.has(message)) {
+                handlers.set(message, []);
+            }
+            handlers.get(message).push(callback);
         }
-        handlers.get(message).push(callback);
-        
-        // Register with C++ side
-        _internal.registerHandler(message);
     },
     
     /**
