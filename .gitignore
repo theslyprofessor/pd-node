@@ -1,0 +1,32 @@
+# Build directories
+build/
+out/
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.pd_darwin
+*.pd_linux
+*.exe
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# Node/Bun
+node_modules/
+package-lock.json
+bun.lockb
+
+# Logs
+*.log
+
+# Test artifacts
+test-output/
