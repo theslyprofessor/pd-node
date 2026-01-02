@@ -10,22 +10,32 @@
 
 ## Immediate Next Steps (Phase 1)
 
-### 1. Set Up Build System (Week 1)
+### 1. Set Up Build System (Week 1) ✅ COMPLETE
 
-- [ ] Create `CMakeLists.txt` based on pdjs structure
-- [ ] Add pd.build as git submodule
-- [ ] Set up cross-platform builds (macOS/Linux/Windows)
+- [x] Create `CMakeLists.txt` based on pdjs structure
+- [x] Add pd.build as git submodule
+- [x] Set up cross-platform builds (macOS/Linux/Windows)
 - [ ] Create CI/CD with GitHub Actions
 
-### 2. Implement Runtime Detection (Week 1-2)
+**Status:** Binary compiles successfully! `node.pd_darwin` (53KB) built for arm64-macos.
+
+### 2. Implement Runtime Detection (Week 1-2) ✅ COMPLETE
 
 **File:** `node/runtime_detector.cpp`
 
-- [ ] Detect Bun in system PATH
-- [ ] Detect Node.js in system PATH  
-- [ ] File extension detection (.js vs .ts)
-- [ ] Runtime selection logic
-- [ ] User-friendly error messages
+- [x] Detect Bun in system PATH
+- [x] Detect Node.js in system PATH  
+- [x] File extension detection (.js vs .ts)
+- [x] Runtime selection logic
+- [x] User-friendly error messages
+
+**Verified working:**
+```
+Bun: 1.3.5 (/Users/ntiruviluamala/.nix-profile/bin/bun)
+Node.js: v22.21.1 (/Users/ntiruviluamala/.nix-profile/bin/node)
+Runtime for test.js: Bun
+Runtime for test.ts: Bun
+```
 
 ### 3. Create IPC Bridge (Week 2-3)
 
