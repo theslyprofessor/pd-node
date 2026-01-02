@@ -19,7 +19,7 @@ namespace pdnode {
  */
 class IPCBridge {
 public:
-    IPCBridge(const std::string& runtime_path, const std::string& script_path);
+    IPCBridge(const std::string& runtime_path, const std::string& wrapper_path, const std::string& script_path);
     ~IPCBridge();
     
     /**
@@ -56,6 +56,7 @@ public:
     
 private:
     std::string runtime_path_;
+    std::string wrapper_path_;
     std::string script_path_;
     
     pid_t child_pid_;

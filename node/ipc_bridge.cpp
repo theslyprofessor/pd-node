@@ -15,8 +15,9 @@
 
 namespace pdnode {
 
-IPCBridge::IPCBridge(const std::string& runtime_path, const std::string& script_path)
+IPCBridge::IPCBridge(const std::string& runtime_path, const std::string& wrapper_path, const std::string& script_path)
     : runtime_path_(runtime_path)
+    , wrapper_path_(wrapper_path)
     , script_path_(script_path)
     , child_pid_(-1)
 {
@@ -77,9 +78,11 @@ bool IPCBridge::spawn() {
         dup2(stderr_pipe_[1], STDERR_FILENO);
         close(stderr_pipe_[1]);
         
-        // Execute the runtime with the script
+        // Execute the runtime with wrapper.js and user script
+        // Command: bun wrapper.js user_script.js
         execl(runtime_path_.c_str(), 
               runtime_path_.c_str(),
+              wrapper_path_.c_str(),
               script_path_.c_str(),
               nullptr);
         
