@@ -6,11 +6,11 @@
 #X text 50 590 ⚠️ Requires internet connection!;
 #X obj 100 150 bng 40 250 50 0 empty empty Fetch_Weather 0 -8 0 14 #fcfcfc #000000 #000000;
 #X obj 100 210 node ~/pd-scripts/weather-sonify.js;
-#X unpack f f f f;
-#X floatatom 100 270 7 0 0 0 Temp_Hz - - 0;
-#X floatatom 220 270 7 0 0 0 Humidity_Vol - - 0;
-#X floatatom 340 270 7 0 0 0 Wind_Speed - - 0;
-#X floatatom 460 270 7 0 0 0 Cloud_Filter - - 0;
+#X obj 100 240 unpack f f f f;
+#X floatatom 100 280 7 0 0 0 Temp_Hz - - 0;
+#X floatatom 220 280 7 0 0 0 Humidity_Vol - - 0;
+#X floatatom 340 280 7 0 0 0 Wind_Speed - - 0;
+#X floatatom 460 280 7 0 0 0 Cloud_Filter - - 0;
 #X text 200 150 <- Click to fetch;
 #X text 50 330 Musical Mapping:;
 #X text 70 355 🌡️ Temperature → Frequency (200-800 Hz);
